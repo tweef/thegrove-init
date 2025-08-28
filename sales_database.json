@@ -1,0 +1,749 @@
+{
+  "invoices": [
+    {
+      "id": 1756229481949,
+      "invoiceNumber": "INV-001",
+      "clientName": "Shafiq Sous",
+      "phoneNumber": "0799644541",
+      "address": "123 Main st, City, State 123456",
+      "totalAmount": 1000,
+      "amountReceived": 200,
+      "remainingAmount": 800,
+      "salesRepresentative": "Ahmad Hassan",
+      "date": "2025-08-26",
+      "day": "Tuesday",
+      "deliveryDate": "2025-08-26",
+      "deliveryDay": "Tuesday",
+      "items": [
+        {
+          "code": "ITEM001",
+          "description": "wooden table",
+          "qty": "2",
+          "price": "500",
+          "discount": "5",
+          "finalPrice": "950.00"
+        },
+        {
+          "code": "ITEM002",
+          "description": "كرسي خشب",
+          "qty": "4",
+          "price": "25",
+          "discount": "50",
+          "finalPrice": "50.00"
+        }
+      ],
+      "notes": "الطاوله خشب الماني",
+      "timestamp": "2025-08-26T17:31:21.949Z",
+      "accountNumber": "ACC-123456",
+      "addressTitle": "Home",
+      "entryNumber": "ENT-001"
+    },
+    {
+      "id": 1756229619815,
+      "invoiceNumber": "INV-002",
+      "clientName": "Shafiq Sous",
+      "phoneNumber": "0799644541",
+      "address": "123 main st, city, state 123456",
+      "totalAmount": 50000,
+      "amountReceived": 50000,
+      "remainingAmount": 0,
+      "salesRepresentative": "Layla Khalil",
+      "date": "2025-08-26",
+      "day": "Tuesday",
+      "deliveryDate": "2025-08-26",
+      "deliveryDay": "Tuesday",
+      "items": [
+        {
+          "code": "ITEM005",
+          "description": "kitchen",
+          "qty": "1",
+          "price": "50000",
+          "discount": "",
+          "finalPrice": "50000.00"
+        }
+      ],
+      "notes": "",
+      "timestamp": "2025-08-26T17:33:39.815Z",
+      "accountNumber": "acc-123456",
+      "addressTitle": "home",
+      "entryNumber": "ent-001"
+    },
+    {
+      "id": 1756229739599,
+      "invoiceNumber": "INV-003",
+      "clientName": "Mo ismail",
+      "phoneNumber": "0798451217",
+      "address": "nazal",
+      "totalAmount": 54,
+      "amountReceived": 13,
+      "remainingAmount": 41,
+      "salesRepresentative": "Aisha Ibrahim",
+      "date": "2025-08-26",
+      "day": "Tuesday",
+      "deliveryDate": "2025-08-26",
+      "deliveryDay": "Tuesday",
+      "items": [
+        {
+          "code": "ITEM009",
+          "description": "SEXY CHAIRS",
+          "qty": "6",
+          "price": "9",
+          "discount": "",
+          "finalPrice": "54.00"
+        }
+      ],
+      "notes": "thank you",
+      "timestamp": "2025-08-26T17:35:39.599Z",
+      "accountNumber": "acc-123",
+      "addressTitle": "office",
+      "entryNumber": "ent-005"
+    },
+    {
+      "id": 1756229769988,
+      "invoiceNumber": "INV-09",
+      "clientName": "MO ismail",
+      "phoneNumber": "34038190483190",
+      "address": "jfioeajfioae",
+      "totalAmount": 54,
+      "amountReceived": 13,
+      "remainingAmount": 41,
+      "salesRepresentative": "Robert Martinez",
+      "date": "2025-08-26",
+      "day": "Tuesday",
+      "deliveryDate": "2025-08-26",
+      "deliveryDay": "Tuesday",
+      "items": [
+        {
+          "code": "1",
+          "description": "sexy chairs ",
+          "qty": "6",
+          "price": "9",
+          "discount": "",
+          "finalPrice": "54.00"
+        }
+      ],
+      "notes": "thank you",
+      "timestamp": "2025-08-26T17:36:09.988Z",
+      "accountNumber": "jfeiaofj",
+      "addressTitle": "jifoeajfioa",
+      "entryNumber": "jfoieajf"
+    },
+    {
+      "id": 1756230423556,
+      "invoiceNumber": "asfsadf",
+      "clientName": "afws",
+      "phoneNumber": "asf",
+      "address": "",
+      "totalAmount": 0.001212,
+      "amountReceived": 0,
+      "remainingAmount": 0,
+      "salesRepresentative": "Fatima Al-Zahra",
+      "date": "2025-08-26",
+      "day": "Tuesday",
+      "deliveryDate": "2025-08-26",
+      "deliveryDay": "Tuesday",
+      "items": [
+        {
+          "code": "asf",
+          "description": "asf",
+          "qty": "",
+          "price": "1234",
+          "discount": "",
+          "finalPrice": "0.00"
+        }
+      ],
+      "notes": "",
+      "timestamp": "2025-08-26T17:47:03.556Z",
+      "accountNumber": "asf",
+      "addressTitle": "fs",
+      "entryNumber": "asdf"
+    },
+    {
+      "id": 1756230427442,
+      "invoiceNumber": "asfsadf",
+      "clientName": "afws",
+      "phoneNumber": "asf",
+      "address": "",
+      "totalAmount": 0.001212,
+      "amountReceived": 0,
+      "remainingAmount": 0,
+      "salesRepresentative": "Fatima Al-Zahra",
+      "date": "2025-08-26",
+      "day": "Tuesday",
+      "deliveryDate": "2025-08-26",
+      "deliveryDay": "Tuesday",
+      "items": [
+        {
+          "code": "asf",
+          "description": "asf",
+          "qty": "",
+          "price": "1234",
+          "discount": "",
+          "finalPrice": "0.00"
+        }
+      ],
+      "notes": "",
+      "timestamp": "2025-08-26T17:47:07.442Z",
+      "accountNumber": "asf",
+      "addressTitle": "fs",
+      "entryNumber": "asdf"
+    },
+    {
+      "id": 1756231510388,
+      "invoiceNumber": "INV-001",
+      "clientName": "Shafiq Sous",
+      "phoneNumber": "00962799644541",
+      "address": "123 main st, city, state 123456",
+      "totalAmount": 10000,
+      "amountReceived": 400,
+      "remainingAmount": 9600,
+      "salesRepresentative": "Ahmad Hassan",
+      "date": "2025-08-26",
+      "day": "Tuesday",
+      "deliveryDate": "2025-08-26",
+      "deliveryDay": "Tuesday",
+      "items": [
+        {
+          "code": "ITEM001",
+          "description": "Wooden Table",
+          "qty": "2",
+          "price": "5000",
+          "discount": "",
+          "finalPrice": "10000.00"
+        }
+      ],
+      "notes": "Thanks",
+      "timestamp": "2025-08-26T18:05:10.388Z",
+      "accountNumber": "acc-123456",
+      "addressTitle": "home",
+      "entryNumber": "ent-001"
+    },
+    {
+      "id": 1756231841745,
+      "invoiceNumber": "INV-001",
+      "clientName": "Shafiq Sous",
+      "phoneNumber": "00962799644541",
+      "address": "123 main st, city, state 123456",
+      "totalAmount": 10000,
+      "amountReceived": 400,
+      "remainingAmount": 9600,
+      "salesRepresentative": "Ahmad Hassan",
+      "date": "2025-08-26",
+      "day": "Tuesday",
+      "deliveryDate": "2025-08-26",
+      "deliveryDay": "Tuesday",
+      "items": [
+        {
+          "code": "ITEM001",
+          "description": "Wooden Table",
+          "qty": "2",
+          "price": "5000",
+          "discount": "",
+          "finalPrice": "10000.00"
+        }
+      ],
+      "notes": "Thanks",
+      "timestamp": "2025-08-26T18:10:41.745Z",
+      "accountNumber": "acc-123456",
+      "addressTitle": "home",
+      "entryNumber": "ent-001"
+    },
+    {
+      "id": 1756231877620,
+      "invoiceNumber": "INV-001",
+      "clientName": "Shafiq Sous",
+      "phoneNumber": "00962799644541",
+      "address": "123 main st, city, state 123456",
+      "totalAmount": 10000,
+      "amountReceived": 400,
+      "remainingAmount": 9600,
+      "salesRepresentative": "Ahmad Hassan",
+      "date": "2025-08-26",
+      "day": "Tuesday",
+      "deliveryDate": "2025-08-26",
+      "deliveryDay": "Tuesday",
+      "items": [
+        {
+          "code": "ITEM001",
+          "description": "Wooden Table",
+          "qty": "2",
+          "price": "5000",
+          "discount": "",
+          "finalPrice": "10000.00"
+        }
+      ],
+      "notes": "Thanks",
+      "timestamp": "2025-08-26T18:11:17.620Z",
+      "accountNumber": "acc-123456",
+      "addressTitle": "home",
+      "entryNumber": "ent-001"
+    },
+    {
+      "id": 1756232051520,
+      "invoiceNumber": "INV-001",
+      "clientName": "Shafiq Sous",
+      "phoneNumber": "0799644541",
+      "address": "123 main st, city, state 123456",
+      "totalAmount": 5000,
+      "amountReceived": 0,
+      "remainingAmount": 5000,
+      "salesRepresentative": "Ahmad Hassan",
+      "date": "2025-08-26",
+      "day": "Tuesday",
+      "deliveryDate": "2025-08-26",
+      "deliveryDay": "Tuesday",
+      "items": [
+        {
+          "code": "ITEM001",
+          "description": "wooden table",
+          "qty": "1",
+          "price": "5000",
+          "discount": "",
+          "finalPrice": "5000.00"
+        }
+      ],
+      "notes": "thanks",
+      "timestamp": "2025-08-26T18:14:11.520Z",
+      "accountNumber": "acc-123456",
+      "addressTitle": "home",
+      "entryNumber": "ent-001"
+    },
+    {
+      "id": 1756232134970,
+      "invoiceNumber": "INV-055",
+      "clientName": "Shafiq Sous",
+      "phoneNumber": "0799644541",
+      "address": "123 main st, city, state 123456",
+      "totalAmount": 2500,
+      "amountReceived": 2500,
+      "remainingAmount": 0,
+      "salesRepresentative": "Mohammed Al-Rashid",
+      "date": "2025-08-26",
+      "day": "Tuesday",
+      "deliveryDate": "2025-08-26",
+      "deliveryDay": "Tuesday",
+      "items": [
+        {
+          "code": "ITEM001",
+          "description": "Table",
+          "qty": "5",
+          "price": "500",
+          "discount": "",
+          "finalPrice": "2500.00"
+        }
+      ],
+      "notes": "yeye",
+      "timestamp": "2025-08-26T18:15:34.970Z",
+      "accountNumber": "acc-123456",
+      "addressTitle": "home",
+      "entryNumber": "ent-001"
+    },
+    {
+      "id": 1756301242703,
+      "invoiceNumber": "INV-022",
+      "clientName": "Shafiq Sous",
+      "phoneNumber": "0799644541",
+      "address": "123 Main st, city, state 123456",
+      "totalAmount": 7500,
+      "amountReceived": 500,
+      "remainingAmount": 7000,
+      "salesRepresentative": "Emily Wilson",
+      "date": "2025-08-27",
+      "day": "Wednesday",
+      "deliveryDate": "2025-08-29",
+      "deliveryDay": "Friday",
+      "items": [
+        {
+          "code": "ITEM004",
+          "description": "طاوله من حديد",
+          "qty": "3",
+          "price": "5000",
+          "discount": "50",
+          "finalPrice": "7500.00"
+        }
+      ],
+      "notes": "منظف مجاني مع الطلب",
+      "timestamp": "2025-08-27T13:27:22.703Z",
+      "accountNumber": "ACC-123456",
+      "addressTitle": "Office",
+      "entryNumber": "ENT-05"
+    },
+    {
+      "id": 1756301803740,
+      "invoiceNumber": "INV-56",
+      "clientName": "",
+      "phoneNumber": "",
+      "address": "",
+      "totalAmount": 0,
+      "amountReceived": 0,
+      "remainingAmount": 0,
+      "salesRepresentative": "Mohammed Al-Rashid",
+      "date": "2025-08-27",
+      "day": "Wednesday",
+      "deliveryDate": "2025-08-27",
+      "deliveryDay": "Wednesday",
+      "items": [
+        {
+          "code": "item001",
+          "description": "",
+          "qty": "",
+          "price": "",
+          "discount": "",
+          "finalPrice": ""
+        }
+      ],
+      "notes": "",
+      "timestamp": "2025-08-27T13:36:43.740Z",
+      "accountNumber": "",
+      "addressTitle": "",
+      "entryNumber": ""
+    },
+    {
+      "id": 1756301828634,
+      "invoiceNumber": "INV-57",
+      "clientName": "",
+      "phoneNumber": "",
+      "address": "",
+      "totalAmount": 0,
+      "amountReceived": 0,
+      "remainingAmount": 0,
+      "salesRepresentative": "Mohammed Al-Rashid",
+      "date": "2025-08-27",
+      "day": "Wednesday",
+      "deliveryDate": "2025-08-27",
+      "deliveryDay": "Wednesday",
+      "items": [
+        {
+          "code": "item001",
+          "description": "",
+          "qty": "",
+          "price": "",
+          "discount": "",
+          "finalPrice": ""
+        },
+        {
+          "code": "item001",
+          "description": "",
+          "qty": "",
+          "price": "",
+          "discount": "",
+          "finalPrice": ""
+        },
+        {
+          "code": "item001",
+          "description": "",
+          "qty": "",
+          "price": "",
+          "discount": "",
+          "finalPrice": ""
+        },
+        {
+          "code": "item001",
+          "description": "",
+          "qty": "",
+          "price": "",
+          "discount": "",
+          "finalPrice": ""
+        },
+        {
+          "code": "item001",
+          "description": "",
+          "qty": "",
+          "price": "",
+          "discount": "",
+          "finalPrice": ""
+        },
+        {
+          "code": "item001",
+          "description": "",
+          "qty": "",
+          "price": "",
+          "discount": "",
+          "finalPrice": ""
+        },
+        {
+          "code": "item001",
+          "description": "",
+          "qty": "",
+          "price": "",
+          "discount": "",
+          "finalPrice": ""
+        },
+        {
+          "code": "item001",
+          "description": "",
+          "qty": "",
+          "price": "",
+          "discount": "",
+          "finalPrice": ""
+        },
+        {
+          "code": "item001",
+          "description": "",
+          "qty": "",
+          "price": "",
+          "discount": "",
+          "finalPrice": ""
+        },
+        {
+          "code": "item001",
+          "description": "",
+          "qty": "",
+          "price": "",
+          "discount": "",
+          "finalPrice": ""
+        }
+      ],
+      "notes": "",
+      "timestamp": "2025-08-27T13:37:08.634Z",
+      "accountNumber": "",
+      "addressTitle": "",
+      "entryNumber": ""
+    },
+    {
+      "id": 1756304605176,
+      "invoiceNumber": "INV-002",
+      "clientName": "Shafiq Sous",
+      "phoneNumber": "0799644541",
+      "address": "123 Main st, city, state",
+      "totalAmount": 475,
+      "amountReceived": 5,
+      "remainingAmount": 470,
+      "salesRepresentative": "Mohammed Al-Rashid",
+      "date": "2025-08-27",
+      "day": "Wednesday",
+      "deliveryDate": "2025-08-27",
+      "deliveryDay": "Wednesday",
+      "items": [
+        {
+          "code": "ITEM001",
+          "description": "Table",
+          "qty": "1",
+          "price": "500",
+          "discount": "5",
+          "finalPrice": "475.00"
+        }
+      ],
+      "notes": "Thanks",
+      "timestamp": "2025-08-27T14:23:25.176Z",
+      "accountNumber": "ACC-123456",
+      "addressTitle": "Home",
+      "entryNumber": "ENT-002"
+    },
+    {
+      "id": 1756304739954,
+      "invoiceNumber": "INV-005",
+      "clientName": "Shafiq",
+      "phoneNumber": "+962799644541",
+      "address": "123 Main St, City",
+      "totalAmount": 950,
+      "amountReceived": 500,
+      "remainingAmount": 450,
+      "salesRepresentative": "David Chen",
+      "date": "2025-08-27",
+      "day": "Monday",
+      "deliveryDate": "2025-08-29",
+      "deliveryDay": "Friday",
+      "items": [
+        {
+          "code": "ITEM002",
+          "description": "Table",
+          "qty": "2",
+          "price": "500",
+          "discount": "5",
+          "finalPrice": "950.00"
+        }
+      ],
+      "notes": "Yes",
+      "timestamp": "2025-08-27T14:25:39.954Z",
+      "accountNumber": "ACC-12345",
+      "addressTitle": "Home",
+      "entryNumber": "ENT-005"
+    },
+    {
+      "id": 1756305234955,
+      "invoiceNumber": "INV-004",
+      "clientName": "Shafiq",
+      "phoneNumber": "0799644541",
+      "address": "123 main",
+      "totalAmount": 9.5,
+      "amountReceived": 0.5,
+      "remainingAmount": 9,
+      "salesRepresentative": "Emily Wilson",
+      "date": "2025-08-27",
+      "day": "Wednesday",
+      "deliveryDate": "2025-08-27",
+      "deliveryDay": "Wednesday",
+      "items": [
+        {
+          "code": "ITEM",
+          "description": "TABLE",
+          "qty": "2",
+          "price": "5",
+          "discount": "5",
+          "finalPrice": "9.50"
+        }
+      ],
+      "notes": "YE",
+      "timestamp": "2025-08-27T14:33:54.955Z",
+      "accountNumber": "acc",
+      "addressTitle": "home",
+      "entryNumber": "ent"
+    },
+    {
+      "id": 1756305347564,
+      "invoiceNumber": "INV-58",
+      "clientName": "",
+      "phoneNumber": "0799644541",
+      "address": "",
+      "totalAmount": 5,
+      "amountReceived": 0,
+      "remainingAmount": 5,
+      "salesRepresentative": "Emily Wilson",
+      "date": "2025-08-27",
+      "day": "Wednesday",
+      "deliveryDate": "2025-08-27",
+      "deliveryDay": "Wednesday",
+      "items": [
+        {
+          "code": "ITEM",
+          "description": "T",
+          "qty": "1",
+          "price": "5",
+          "discount": "",
+          "finalPrice": "5.00"
+        }
+      ],
+      "notes": "",
+      "timestamp": "2025-08-27T14:35:47.564Z",
+      "accountNumber": "",
+      "addressTitle": "",
+      "entryNumber": ""
+    },
+    {
+      "id": 1756305382782,
+      "invoiceNumber": "INV",
+      "clientName": "SHAFIQ",
+      "phoneNumber": "962799644541",
+      "address": "123",
+      "totalAmount": 5,
+      "amountReceived": 0,
+      "remainingAmount": 5,
+      "salesRepresentative": "Emily Wilson",
+      "date": "2025-08-27",
+      "day": "Wednesday",
+      "deliveryDate": "2025-08-27",
+      "deliveryDay": "Wednesday",
+      "items": [
+        {
+          "code": "ITEM",
+          "description": "T",
+          "qty": "1",
+          "price": "5",
+          "discount": "",
+          "finalPrice": "5.00"
+        }
+      ],
+      "notes": "",
+      "timestamp": "2025-08-27T14:36:22.782Z",
+      "accountNumber": "ACC",
+      "addressTitle": "HOME",
+      "entryNumber": "ENT"
+    },
+    {
+      "id": 1756305419749,
+      "invoiceNumber": "INV",
+      "clientName": "SHAFIQ",
+      "phoneNumber": "962799644541",
+      "address": "123",
+      "totalAmount": 5,
+      "amountReceived": 0,
+      "remainingAmount": 5,
+      "salesRepresentative": "Emily Wilson",
+      "date": "2025-08-27",
+      "day": "Wednesday",
+      "deliveryDate": "2025-08-27",
+      "deliveryDay": "Wednesday",
+      "items": [
+        {
+          "code": "ITEM",
+          "description": "T",
+          "qty": "1",
+          "price": "5",
+          "discount": "",
+          "finalPrice": "5.00"
+        }
+      ],
+      "notes": "",
+      "timestamp": "2025-08-27T14:36:59.749Z",
+      "accountNumber": "ACC",
+      "addressTitle": "HOME",
+      "entryNumber": "ENT"
+    },
+    {
+      "id": 1756306315861,
+      "invoiceNumber": "INV-001-05",
+      "clientName": "Shafiq Sous",
+      "phoneNumber": "+962799644541",
+      "address": "123 Main st",
+      "totalAmount": 1900,
+      "amountReceived": 5,
+      "remainingAmount": 1895,
+      "salesRepresentative": "Mohammed Al-Rashid",
+      "date": "2025-08-27",
+      "day": "Wednesday",
+      "deliveryDate": "2025-08-27",
+      "deliveryDay": "Wednesday",
+      "items": [
+        {
+          "code": "ITEM001",
+          "description": "Wooden Table",
+          "qty": "4",
+          "price": "500",
+          "discount": "5",
+          "finalPrice": "1900.00"
+        }
+      ],
+      "notes": "",
+      "timestamp": "2025-08-27T14:51:55.861Z",
+      "accountNumber": "ACC-123",
+      "addressTitle": "Home",
+      "entryNumber": "ENT-002"
+    },
+    {
+      "id": 1756309012741,
+      "invoiceNumber": "INV-001",
+      "clientName": "Shafiq Sous",
+      "phoneNumber": "0799644541",
+      "address": "123 main",
+      "totalAmount": 950,
+      "amountReceived": 50,
+      "remainingAmount": 900,
+      "salesRepresentative": "Fatima Al-Zahra",
+      "date": "2025-08-27",
+      "day": "Wednesday",
+      "deliveryDate": "2025-08-27",
+      "deliveryDay": "Wednesday",
+      "items": [
+        {
+          "code": "ITEM001",
+          "description": "TABLE",
+          "qty": "1",
+          "price": "1000",
+          "discount": "5",
+          "finalPrice": "950.00"
+        }
+      ],
+      "notes": "TE",
+      "timestamp": "2025-08-27T15:36:52.741Z",
+      "accountNumber": "acc",
+      "addressTitle": "Home",
+      "entryNumber": "ent"
+    }
+  ],
+  "stats": {
+    "totalSales": 22,
+    "totalAmount": 100407.502424,
+    "lastInvoiceNumber": 105
+  }
+}

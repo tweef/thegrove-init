@@ -1,0 +1,10 @@
+{
+  "admin": {
+    "password": "123123123",
+    "lastPasswordChange": "2025-08-27T13:31:57.348Z"
+  },
+  "app": {
+    "name": "THEGROVE Sales Invoice System",
+    "version": "1.0.0"
+  }
+}

@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Invoice Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2C3E50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .admin-link {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            background: rgba(184, 134, 11, 0.8);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .admin-link:hover {
+            background: rgba(184, 134, 11, 1);
+            transform: translateY(-2px);
+        }
+
+        .form-container {
+            padding: 40px;
+        }
+
+        .form-section {
+            margin-bottom: 40px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 25px;
+            background: #fafbfc;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: #2C3E50;
+            margin-bottom: 20px;
+            font-weight: 600;
+            border-bottom: 2px solid #B8860B;
+            padding-bottom: 10px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: 600;
+            color: #2C3E50;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        input, textarea, select {
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #B8860B;
+            box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.1);
+        }
+
+        .items-section {
+            background: white;
+            border: 2px solid #2C3E50;
+            border-radius: 10px;
+            padding: 25px;
+        }
+
+        .items-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .items-table th {
+            background: #2C3E50;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .items-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .items-table input {
+            width: 100%;
+            border: 1px solid #ddd;
+            padding: 8px;
+            margin: 0;
+        }
+
+        .add-item-btn {
+            background: #B8860B;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .add-item-btn:hover {
+            background: #996f0a;
+        }
+
+        .remove-item-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: background 0.3s ease;
+        }
+
+        .remove-item-btn:hover {
+            background: #c0392b;
+        }
+
+        .submit-section {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .generate-btn {
+            background: linear-gradient(135deg, #2C3E50 0%, #34495e 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 10px 10px 0;
+        }
+
+        .email-btn {
+            background: linear-gradient(135deg, #B8860B 0%, #996f0a 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 10px 10px 0;
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 10px 10px 0;
+        }
+
+        .generate-btn:hover, .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(44, 62, 80, 0.3);
+        }
+
+        .generate-btn:active {
+            transform: translateY(0);
+        }
+
+        .loading {
+            display: none;
+            margin-top: 20px;
+            color: #666;
+        }
+
+        .loading.show {
+            display: block;
+        }
+
+        .notes-textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        /* Style for the sales rep dropdown */
+        #salesRepresentative {
+            background: white;
+            font-size: 1rem;
+            color: #2C3E50;
+        }
+
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .items-table {
+                font-size: 0.9rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .admin-link {
+                position: static;
+                display: inline-block;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="/admin-login" class="admin-link">🔐 Admin Dashboard</a>
+            <h1>THEGROVE</h1>
+            <p>FURNITURE & BEYOND - Sales Invoice Generator</p>
+        </div>
+        
+        <div class="form-container">
+            <form id="invoiceForm">
+                <!-- Basic Information -->
+                <div class="form-section">
+                    <h2 class="section-title">📋 Basic Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="invoiceNumber">Invoice Number</label>
+                            <input type="text" id="invoiceNumber" name="invoiceNumber" placeholder="INV-001">
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" id="date" name="date">
+                        </div>
+                        <div class="form-group">
+                            <label for="day">Day</label>
+                            <input type="text" id="day" name="day" placeholder="Monday">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Client Information -->
+                <div class="form-section">
+                    <h2 class="section-title">👤 Client Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="clientName">Client Name</label>
+                            <input type="text" id="clientName" name="clientName" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number</label>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+1 (555) 123-4567">
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="text" id="address" name="address" placeholder="123 Main St, City, State 12345">
+                        </div>
+                        <div class="form-group">
+                            <label for="addressTitle">Address Title</label>
+                            <input type="text" id="addressTitle" name="addressTitle" placeholder="Home / Office">
+                        </div>
+                        <div class="form-group">
+                            <label for="accountNumber">Account Number</label>
+                            <input type="text" id="accountNumber" name="accountNumber" placeholder="ACC-123456">
+                        </div>
+                        <div class="form-group">
+                            <label for="entryNumber">Entry Number</label>
+                            <input type="text" id="entryNumber" name="entryNumber" placeholder="ENT-001">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sales Representative Section -->
+                <div class="form-section">
+                    <h2 class="section-title">🏅 Sales Representative</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="salesRepresentative">Select Sales Representative</label>
+                            <select id="salesRepresentative" name="salesRepresentative" required>
+                                <option value="">-- Select a Sales Representative --</option>
+                                <option value="Ahmed Al Thebyan">Ahmed Al Thebyan</option>
+                                <option value="Nabeel Al Muhtaseb">Nabeel Al Muhtaseb</option>
+                                <option value="Rana Al Kalabani">Rana Al Kalabani</option>
+                                <option value="Sawsan Tral">Sawsan Tral</option>
+                                <option value="Kholoud Labeeb">Kholoud Labeeb</option>
+                                <option value="The Grove">The Grove</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Items Section -->
+                <div class="form-section items-section">
+                    <h2 class="section-title">🛒 Invoice Items</h2>
+                    <table class="items-table" id="itemsTable">
+                        <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Description</th>
+                                <th>Qty</th>
+                                <th>Price</th>
+                                <th>Disc %</th>
+                                <th>Final Price</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="itemsTableBody">
+                            <tr class="item-row">
+                                <td><input type="text" name="items[0][code]" placeholder="ITEM001"></td>
+                                <td><input type="text" name="items[0][description]" placeholder="Product description"></td>
+                                <td><input type="number" name="items[0][qty]" placeholder="1" min="0" step="1"></td>
+                                <td><input type="number" name="items[0][price]" placeholder="0.00" min="0" step="0.01"></td>
+                                <td><input type="number" name="items[0][discount]" placeholder="0" min="0" max="100" step="0.1"></td>
+                                <td><input type="number" name="items[0][finalPrice]" placeholder="0.00" min="0" step="0.01" readonly></td>
+                                <td><button type="button" class="remove-item-btn" onclick="removeItem(this)">Remove</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button type="button" class="add-item-btn" onclick="addItem()">+ Add Another Item</button>
+                </div>
+
+                <!-- Financial Summary -->
+                <div class="form-section">
+                    <h2 class="section-title">💰 Financial Summary</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="totalAmount">Total Amount</label>
+                            <input type="number" id="totalAmount" name="totalAmount" placeholder="0.00" min="0" step="0.01">
+                        </div>
+                        <div class="form-group">
+                            <label for="amountReceived">Amount Received</label>
+                            <input type="number" id="amountReceived" name="amountReceived" placeholder="0.00" min="0" step="0.01">
+                        </div>
+                        <div class="form-group">
+                            <label for="remainingAmount">Remaining Amount</label>
+                            <input type="number" id="remainingAmount" name="remainingAmount" placeholder="0.00" min="0" step="0.01">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery Information -->
+                <div class="form-section">
+                    <h2 class="section-title">🚚 Delivery Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="deliveryDay">Delivery Day</label>
+                            <input type="text" id="deliveryDay" name="deliveryDay" placeholder="Tuesday">
+                        </div>
+                        <div class="form-group">
+                            <label for="deliveryDate">Delivery Date</label>
+                            <input type="date" id="deliveryDate" name="deliveryDate">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notes -->
+                <div class="form-section">
+                    <h2 class="section-title">📝 Additional Notes</h2>
+                    <div class="form-group">
+                        <label for="notes">Notes</label>
+                        <textarea id="notes" name="notes" class="notes-textarea" placeholder="Any additional notes or special instructions..."></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="submit-section">
+            <button type="button" class="generate-btn" onclick="generatePDF()">
+                📄 Generate Invoice PDF
+            </button>
+            <button type="button" class="whatsapp-btn" onclick="sendWhatsApp()">
+                📱 Send to WhatsApp
+            </button>
+            <div class="loading" id="loading">
+                <p>Processing your request... Please wait.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let itemCount = 1;
+
+        // Set today's date as default
+        document.getElementById('date').valueAsDate = new Date();
+        document.getElementById('deliveryDate').valueAsDate = new Date();
+
+        // Set today's day as default
+        const today = new Date();
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        document.getElementById('day').value = days[today.getDay()];
+        document.getElementById('deliveryDay').value = days[today.getDay()];
+
+        function addItem() {
+            const tableBody = document.getElementById('itemsTableBody');
+            const newRow = document.createElement('tr');
+            newRow.className = 'item-row';
+            newRow.innerHTML = `
+                <td><input type="text" name="items[${itemCount}][code]" placeholder="ITEM00${itemCount + 1}"></td>
+                <td><input type="text" name="items[${itemCount}][description]" placeholder="Product description"></td>
+                <td><input type="number" name="items[${itemCount}][qty]" placeholder="1" min="0" step="1"></td>
+                <td><input type="number" name="items[${itemCount}][price]" placeholder="0.00" min="0" step="0.01"></td>
+                <td><input type="number" name="items[${itemCount}][discount]" placeholder="0" min="0" max="100" step="0.1"></td>
+                <td><input type="number" name="items[${itemCount}][finalPrice]" placeholder="0.00" min="0" step="0.01" readonly></td>
+                <td><button type="button" class="remove-item-btn" onclick="removeItem(this)">Remove</button></td>
+            `;
+            tableBody.appendChild(newRow);
+            itemCount++;
+            
+            // Add event listeners to new row inputs for calculations
+            attachCalculationListeners(newRow);
+        }
+
+        function removeItem(button) {
+            const row = button.closest('tr');
+            if (document.querySelectorAll('.item-row').length > 1) {
+                row.remove();
+                calculateTotals();
+            } else {
+                alert('You must have at least one item in the invoice.');
+            }
+        }
+
+        function attachCalculationListeners(row) {
+            const qtyInput = row.querySelector('input[name*="[qty]"]');
+            const priceInput = row.querySelector('input[name*="[price]"]');
+            const discountInput = row.querySelector('input[name*="[discount]"]');
+            const finalPriceInput = row.querySelector('input[name*="[finalPrice]"]');
+
+            function calculateRowTotal() {
+                const qty = parseFloat(qtyInput.value) || 0;
+                const price = parseFloat(priceInput.value) || 0;
+                const discount = parseFloat(discountInput.value) || 0;
+                
+                const subtotal = qty * price;
+                const discountAmount = subtotal * (discount / 100);
+                const finalPrice = subtotal - discountAmount;
+                
+                finalPriceInput.value = finalPrice.toFixed(2);
+                calculateTotals();
+            }
+
+            qtyInput.addEventListener('input', calculateRowTotal);
+            priceInput.addEventListener('input', calculateRowTotal);
+            discountInput.addEventListener('input', calculateRowTotal);
+        }
+
+        function calculateTotals() {
+            const finalPriceInputs = document.querySelectorAll('input[name*="[finalPrice]"]');
+            let total = 0;
+            
+            finalPriceInputs.forEach(input => {
+                total += parseFloat(input.value) || 0;
+            });
+            
+            document.getElementById('totalAmount').value = total.toFixed(2);
+            
+            // Calculate remaining amount
+            const amountReceived = parseFloat(document.getElementById('amountReceived').value) || 0;
+            const remaining = total - amountReceived;
+            document.getElementById('remainingAmount').value = remaining.toFixed(2);
+        }
+
+        // Add event listener for amount received to calculate remaining
+        document.getElementById('amountReceived').addEventListener('input', function() {
+            const total = parseFloat(document.getElementById('totalAmount').value) || 0;
+            const received = parseFloat(this.value) || 0;
+            const remaining = total - received;
+            document.getElementById('remainingAmount').value = remaining.toFixed(2);
+        });
+
+        // Attach calculation listeners to initial row
+        document.addEventListener('DOMContentLoaded', function() {
+            const initialRow = document.querySelector('.item-row');
+            attachCalculationListeners(initialRow);
+        });
+
+        async function generatePDF() {
+            const form = document.getElementById('invoiceForm');
+            const formData = new FormData(form);
+            const loading = document.getElementById('loading');
+            
+            // Check if sales representative is selected
+            const salesRep = document.getElementById('salesRepresentative').value;
+            if (!salesRep) {
+                alert('Please select a Sales Representative before generating the invoice.');
+                return;
+            }
+            
+            // Convert FormData to regular object
+            const data = {};
+            const items = [];
+            
+            for (let [key, value] of formData.entries()) {
+                if (key.startsWith('items[')) {
+                    // Parse items array
+                    const match = key.match(/items\[(\d+)\]\[(\w+)\]/);
+                    if (match) {
+                        const index = parseInt(match[1]);
+                        const field = match[2];
+                        
+                        if (!items[index]) {
+                            items[index] = {};
+                        }
+                        items[index][field] = value;
+                    }
+                } else {
+                    data[key] = value;
+                }
+            }
+            
+            // Filter out empty items
+            data.items = items.filter(item => 
+                item && (item.code || item.description || item.qty || item.price)
+            );
+            
+            try {
+                loading.classList.add('show');
+                
+                const response = await fetch('/generate-pdf', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                if (response.ok) {
+                    // Create blob and download
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = url;
+                    a.download = `sales-invoice-${data.invoiceNumber || 'generated'}.pdf`;
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                    
+                    // Show success message
+                    alert('✅ Invoice generated and saved to database successfully!');
+                } else {
+                    alert('Error generating PDF. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error generating PDF. Please check your connection and try again.');
+            } finally {
+                loading.classList.remove('show');
+            }
+        }
+        
+// Replace the sendWhatsApp function in your index.html with this version
+
+async function sendWhatsApp() {
+    const form = document.getElementById('invoiceForm');
+    const formData = new FormData(form);
+    const loading = document.getElementById('loading');
+    
+    // Check if sales representative is selected
+    const salesRep = document.getElementById('salesRepresentative').value;
+    if (!salesRep) {
+        alert('Please select a Sales Representative before sending the invoice.');
+        return;
+    }
+    
+    // Check if phone number is provided
+    const phoneNumber = document.getElementById('phoneNumber').value;
+    if (!phoneNumber) {
+        alert('Please enter a phone number to send via WhatsApp.');
+        document.getElementById('phoneNumber').focus();
+        return;
+    }
+    
+    // Convert FormData to regular object
+    const data = {};
+    const items = [];
+    
+    for (let [key, value] of formData.entries()) {
+        if (key.startsWith('items[')) {
+            // Parse items array
+            const match = key.match(/items\[(\d+)\]\[(\w+)\]/);
+            if (match) {
+                const index = parseInt(match[1]);
+                const field = match[2];
+                
+                if (!items[index]) {
+                    items[index] = {};
+                }
+                items[index][field] = value;
+            }
+        } else {
+            data[key] = value;
+        }
+    }
+    
+    // Filter out empty items
+    data.items = items.filter(item => 
+        item && (item.code || item.description || item.qty || item.price)
+    );
+    
+    try {
+        loading.classList.add('show');
+        
+        // Show sending message
+        loading.innerHTML = '<p>📱 Sending invoice via WhatsApp...</p>';
+        
+        const response = await fetch('/send-whatsapp', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok && result.success) {
+            // Show success message
+            alert(`✅ Invoice sent successfully via WhatsApp!
+            
+📱 Sent to: ${result.phoneNumber}
+📄 Invoice: ${result.fileName}
+🆔 Message ID: ${result.messageSid}
+
+The client will receive the PDF invoice directly in their WhatsApp chat.`);
+            
+            // Optionally clear the form or redirect
+            if (confirm('Would you like to create another invoice?')) {
+                form.reset();
+                // Reset items table to one row
+                const tbody = document.getElementById('itemsTableBody');
+                tbody.innerHTML = `
+                    <tr class="item-row">
+                        <td><input type="text" name="items[0][code]" placeholder="ITEM001"></td>
+                        <td><input type="text" name="items[0][description]" placeholder="Product description"></td>
+                        <td><input type="number" name="items[0][qty]" placeholder="1" min="0" step="1"></td>
+                        <td><input type="number" name="items[0][price]" placeholder="0.00" min="0" step="0.01"></td>
+                        <td><input type="number" name="items[0][discount]" placeholder="0" min="0" max="100" step="0.1"></td>
+                        <td><input type="number" name="items[0][finalPrice]" placeholder="0.00" min="0" step="0.01" readonly></td>
+                        <td><button type="button" class="remove-item-btn" onclick="removeItem(this)">Remove</button></td>
+                    </tr>
+                `;
+                attachCalculationListeners(document.querySelector('.item-row'));
+            }
+            
+        } else {
+            // Show error message
+            alert(`❌ Error sending WhatsApp message:
+            
+${result.error}
+
+Please check:
+• Phone number format (should include country code)
+• Internet connection
+• Twilio account setup
+
+Details: ${result.details || 'No additional details'}`);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('❌ Error sending WhatsApp message. Please check your connection and try again.');
+    } finally {
+        loading.classList.remove('show');
+        loading.innerHTML = '<p>Processing your request...</p>';
+    }
+}
+    </script>
+</body>
+</html>
